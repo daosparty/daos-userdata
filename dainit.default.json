@@ -3,19 +3,37 @@
   "steps": [
     {
       "type": "config",
-      "data": {
-        "home": "/home/daos"
-      }
+      "list": [
+        {
+          "home": "/home/daos"
+        }
+      ]
     },
     {
       "type": "exec",
-      "cmd": "mkdir",
-      "args": ["/workspaces"]
+      "list": [
+        {
+          "cmd": "mkdir",
+          "args": ["/workspaces"]
+        },
+        {
+          "cmd": "mkdir",
+          "args": ["-p", "/mnt/p1"]
+        },
+        {
+          "cmd": "chmod",
+          "args": ["1000:1000", "/workspaces"]
+        }
+      ]
     },
     {
       "type": "exec",
-      "cmd": "cp",
-      "args": ["/a", "/b"]
+      "list": [
+        {
+          "cmd": "cp",
+          "args": ["/a", "/b"]
+        }
+      ]
     }
   ]
 }
